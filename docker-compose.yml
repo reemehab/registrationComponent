@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+    registration-component:
+      build: ./component-1
+      volumes:
+        - D:/FCAI-CU/Level4/secondterm/Cloud Computing/Assignments/data/:/app/data/batch/
+        - D:/FCAI-CU/Level4/secondterm/Cloud Computing/Assignments/database/:/app/database/
+      stdin_open: true
+      tty: true
+      command: ["java", "-cp", "/app:/app/lib/commons-lang3-3.0.1.jar:/app/lib/opencsv-5.5.2.jar", "Main"]
+    statistics-components:
+      build: ./component-2
+      volumes:
+        - D:/FCAI-CU/Level4/secondterm/Cloud Computing/Assignments/data/:/app/data/batch/
+        - D:/FCAI-CU/Level4/secondterm/Cloud Computing/Assignments/database/:/app/database/
+      stdin_open: true
+      tty: true
